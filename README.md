@@ -11,11 +11,12 @@ Generate SSH passwords for devices (MN6200D, HA6400, TF i60 B1) based on MAC add
 - [Go 1.18+](https://go.dev/dl/)
 
 ### Installation
-
+```bash
 git clone https://github.com/Hamid1920/lt643-password-generator.git
 cd LT643-SSH-Password-Calculator
-go build 
-🚀 Usage
+go build
+```
+## 🚀 Usage
 Command-line Mode
 
 ### With MAC argument
@@ -43,7 +44,7 @@ The tool accepts these formats:
 
 00-11-22-33-44-55
 
-### ⚙️ Technical Implementation
+## ⚙️ Technical Implementation
 The algorithm uses PBKDF2 key derivation:
 
 go
@@ -55,11 +56,11 @@ password := pbkdf2.Key(
     sha256.New
 )
 
-### ⚠️ Important Notes
+## ⚠️ Important Notes
 
 Valid MAC addresses must be 12 hexadecimal characters
 
-### Device compatibility:
+## Device compatibility:
 
 ✅ MN6200D
 
