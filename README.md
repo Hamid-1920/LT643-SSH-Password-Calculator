@@ -11,14 +11,15 @@ Generate SSH passwords for devices (MN6200D, HA6400, TF i60 B1) based on MAC add
 - [Go 1.18+](https://go.dev/dl/)
 
 ### Installation
-```bash
+
 git clone https://github.com/Hamid1920/lt643-password-generator.git
 cd LT643-SSH-Password-Calculator
 go build 
 🚀 Usage
 Command-line Mode
-bash
-# With MAC argument
+
+### With MAC argument
+```bash
 ./LT643PasswordCalc 00:11:22:33:44:55
 
 # Output:
@@ -27,11 +28,13 @@ bash
 # Generated Password for MN6200D: a1b2c3d4e5
 # Generated Password for HA6400: d4e5f6a1b2
 # Generated Password for TF i60 B1: f6a1b2c3d4
-Interactive Mode
-bash
+```
+### Interactive Mode
+```bash
 ./LT643PasswordCalc
 > Enter MAC address: 00-11-22-33-44-55
-🔍 MAC Address Formats
+```
+### 🔍 MAC Address Formats
 The tool accepts these formats:
 
 001122334455
@@ -40,7 +43,7 @@ The tool accepts these formats:
 
 00-11-22-33-44-55
 
-⚙️ Technical Implementation
+### ⚙️ Technical Implementation
 The algorithm uses PBKDF2 key derivation:
 
 go
@@ -52,11 +55,11 @@ password := pbkdf2.Key(
     sha256.New
 )
 
-⚠️ Important Notes
+### ⚠️ Important Notes
 
 Valid MAC addresses must be 12 hexadecimal characters
 
-Device compatibility:
+### Device compatibility:
 
 ✅ MN6200D
 
@@ -68,41 +71,3 @@ Device compatibility:
 Disclaimer: Use only on devices you own with proper authorization.
 💻 Developed by Hamid1920
 🐛 Report issues in GitHub Issues
-
-text
-
-### Key Formatting Features:
-1. **Header/Footer Elements**:
-   - Badges with flat-square styling
-   - Horizontal rules (`---`) for section separation
-   - Emoji-enhanced section headers
-   - Footer disclaimer with developer credit
-
-2. **GitHub-Specific Formatting**:
-   - Triple backtick code fences with syntax highlighting
-   - Emoji support (🔐 ⚡ 🚀 🔍 ⚙️ ⚠️ 📜)
-   - Collapsible sections
-   - Relative links to project files
-
-3. **Visual Enhancements**:
-   - Clear section hierarchy with heading levels
-   - Example output block instead of inline comments
-   - Directory tree visualization
-   - Device compatibility checklist
-
-4. **Mobile-Friendly**:
-   - Short line lengths
-   - Clear visual separation
-   - Emoji as visual anchors
-
-To use:
-1. Create `README.md` in project root
-2. Paste this content
-3. Commit and push to GitHub
-
-GitHub will automatically render this with:
-- Syntax-highlighted code blocks
-- Proper heading hierarchy
-- Badge displays
-- Emoji support
-- Clear section separation
